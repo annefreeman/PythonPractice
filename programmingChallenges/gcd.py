@@ -29,13 +29,15 @@ def gcd_naive(a, b):
 def gcd_recursive(a,b):
     if b == 0:
         return a
+    elif b == 1:
+        return b
     a_prime = a%b
     return gcd_recursive(b, a_prime)
 
 if __name__ == "__main__":
     a = int(input("Enter first integer for gcd:"))
     b = int(input("Enter second integer for gcd:"))
-    #input = sys.stdin.read()
-    #a, b = map(int, input.split())
+    n1 = max(a,b)
+    n2 = min(a,b)
     print(gcd_naive(a, b))
-    print(gcd_recursive(a,b))
+    print(gcd_recursive(n1,n2))
